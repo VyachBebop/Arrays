@@ -13,17 +13,21 @@ public class TaskOne {
         Scanner scanner = new Scanner(System.in);
         int arrLenght = scanner.nextInt();
         int[] arr = new int[arrLenght];
+        int temp;
 
         System.out.println("First Array: ");
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100);
+            arr[i] = random.nextInt(15);
             System.out.print(arr[i] + " ");
         }
-        System.out.println("\nSecond Array: ");
-        for (int i = arr.length - 1; i >= 0; i--) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-
-
     }
 }
